@@ -19,11 +19,11 @@ export class EDAAppStack extends cdk.Stack {
       publicReadAccess: false,
     });
 
-    const DLQ = new sqs.Queue(this, "record-dlq", {
+    const DLQ = new sqs.Queue(this, "Delete Queue", {
       retentionPeriod: Duration.days(1),
     });
 
-    const imageQueue = new sqs.Queue(this, "record-queue", {
+    const imageQueue = new sqs.Queue(this, "Image Queue", {
       visibilityTimeout: Duration.seconds(30),
       deadLetterQueue: {
         queue: DLQ,
