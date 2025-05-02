@@ -163,8 +163,6 @@ export class EDAAppStack extends cdk.Stack {
         value: Bucket.bucketName,
       });
    
-      new cdk.CfnOutput(this, "tableName", {
-        value: imagesTable.tableName,
-      });
+      
   }
 }
